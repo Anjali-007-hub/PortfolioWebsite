@@ -34,6 +34,9 @@ Interests:
  Python Programming
  Full Stack Development
 Thank you for visiting my portfolio.
+my portfilio
+i am cse student
+git first project.
 
 
  
