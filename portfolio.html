@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjali Dev D | Portfolio</title>
+    <style>
+
+    /* ===========================
+   Google Font & Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#222;
+    line-height:1.7;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#2563eb;
+}
+
+.menu-btn{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:70px;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding-top:120px;
+}
+
+.hero-image{
+    text-align:center;
+}
+
+.profile-placeholder{
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:#eef4ff;
+    border:4px dashed #2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:90px;
+    color:#2563eb;
+    transition:.4s;
+}
+
+.profile-placeholder:hover{
+    transform:scale(1.05);
+}
+
+.photo-note{
+    margin-top:15px;
+    color:#777;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero-content h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero-content h1 span{
+    color:#2563eb;
+}
+
+.hero-content h2{
+    font-size:28px;
+    color:#3b82f6;
+    height:40px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    transition:.3s;
+    font-weight:500;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-4px);
+}
+
+/* ===========================
+   Section
+=========================== */
+
+.section{
+    width:90%;
+    max-width:1100px;
+    margin:90px auto;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:45px;
+    color:#2563eb;
+    font-size:34px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* ===========================
+   Skills
+=========================== */
+
+.skills-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skills-grid span{
+    background:#eef4ff;
+    color:#2563eb;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.skills-grid span:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* ===========================
+   Badge
+=========================== */
+
+.badge{
+    display:inline-block;
+    padding:12px 24px;
+    background:#2563eb;
+    color:white;
+    border-radius:30px;
+    font-weight:600;
+}
+/* ===========================
+   Contact Section
+=========================== */
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.contact-links a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:#ffffff;
+    color:#2563eb;
+    padding:14px 24px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    font-weight:500;
+}
+
+.contact-links a:hover{
+    background:#2563eb;
+    color:#ffffff;
+    transform:translateY(-5px);
+}
+
+.contact-links i{
+    font-size:20px;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    margin-top:80px;
+    background:#2563eb;
+    color:#ffffff;
+    text-align:center;
+    padding:25px;
+    font-size:15px;
+}
+
+/* ===========================
+   Scroll Animation
+=========================== */
+
+.section{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===========================
+   Smooth Hover Effects
+=========================== */
+
+.card,
+.skills-grid span,
+.badge,
+.btn,
+.contact-links a{
+    transition:all 0.3s ease;
+}
+
+.card:hover{
+    box-shadow:0 15px 35px rgba(37,99,235,0.15);
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media(max-width:992px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content h2{
+    font-size:24px;
+}
+
+.profile-placeholder{
+    width:210px;
+    height:210px;
+    font-size:75px;
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-links{
+    position:absolute;
+    top:75px;
+    right:0;
+    width:220px;
+    background:#ffffff;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding:25px;
+    display:none;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+    border-radius:0 0 0 15px;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.menu-btn{
+    display:block;
+}
+
+.hero{
+    padding-top:120px;
+}
+
+.hero-content h1{
+    font-size:34px;
+}
+
+.hero-content h2{
+    font-size:22px;
+}
+
+.section h2{
+    font-size:28px;
+}
+
+.card{
+    padding:25px;
+}
+
+.skills-grid{
+    justify-content:center;
+}
+
+.contact-links{
+    flex-direction:column;
+    align-items:center;
+}
+
+.contact-links a{
+    width:240px;
+    justify-content:center;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo{
+    font-size:20px;
+}
+
+.hero-content h1{
+    font-size:28px;
+}
+
+.hero-content p{
+    font-size:15px;
+}
+
+.profile-placeholder{
+    width:170px;
+    height:170px;
+    font-size:60px;
+}
+
+.btn{
+    padding:12px 22px;
+    font-size:15px;
+}
+
+.section{
+    margin:70px auto;
+}
+
+}
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Anjali Dev D
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-image">
+
+            <div class="profile-placeholder">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <p class="photo-note">
+                Upload Your Photo
+            </p>
+
+        </div>
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm <span>Anjali Dev D</span>
+            </h1>
+
+            <p style="color:#2563EB;font-size:20px;font-weight:bold"> Engineering student passionate about AI and Data Science.</p>
+
+            <div class="hero-buttons">
+
+                <a href="https://www.linkedin.com/in/anjali-dev-94422837b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank" class="btn">
+
+                    <i class="fab fa-linkedin"></i>
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about" class="section">
+
+        <h2>About Me</h2>
+
+        <div class="card">
+
+            <p>
+
+                I am Anjali Dev, currently pursuing a B.Tech in Computer Science Engineering. I enjoy coding in Python
+                and C and am passionate about expanding my knowledge of Artificial Intelligence and software
+                development. I am always eager to learn new technologies and improve my problem-solving skills.
+
+            </p>
+
+            <br>
+
+            <strong>Current Status</strong>
+
+            <p>
+
+                2nd Year, Computer Science Engineering
+
+                <br>
+
+                Jawaharlal College of Engineering and Technology,
+                Lakkidi, Palakkad
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+
+    <section id="education" class="section">
+
+        <h2>Education</h2>
+
+        <div class="card">
+
+            <h3>B.Tech Computer Science Engineering</h3>
+
+            <p>
+
+                Jawaharlal College of Engineering and Technology
+
+            </p>
+
+            <p>
+
+                Expected Graduation : 2029
+
+            </p>
+
+            <p>
+
+                Relevant Coursework :
+                Python Programming,
+                Data Science
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills" class="section">
+
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+
+            <span>Python</span>
+            <span>C</span>
+            <span>Git Basics</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Problem Solving</span>
+            <span>Teamwork</span>
+            <span>Leadership</span>
+            <span>Communication</span>
+
+        </div>
+
+    </section>
+
+    <!-- Experience -->
+
+    <section id="experience" class="section">
+
+        <h2>Experience</h2>
+
+        <div class="card">
+
+            <h3>Athena 2026 Workshop</h3>
+
+            <p>
+
+                Attended the workshop and gained exposure to emerging technologies while enhancing technical knowledge
+                and networking with peers.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Community -->
+
+    <section id="community" class="section">
+
+        <h2>Communities & Programs</h2>
+
+        <div class="badge">
+
+            IEEE
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact" class="section">
+
+        <h2>Connect</h2>
+
+        <div class="contact-links">
+
+            <a href="mailto:anju2007313@gmail.com">
+
+                <i class="fas fa-envelope"></i>
+
+                Email
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/anjali-dev-94422837b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026 Anjali Dev D. All Rights Reserved.
+
+    </footer>
+<script>
+    // =============================
+// Typing Animation
+// =============================
+
+const text =
+"Engineering student passionate about AI and Software Development.";
+
+const typingElement = document.querySelector(".typing");
+
+let index = 0;
+
+function typeText(){
+
+    if(index < text.length){
+
+        typingElement.textContent += text.charAt(index);
+
+        index++;
+
+        setTimeout(typeText,70);
+
+    }
+
+}
+
+window.onload = typeText;
+
+
+// =============================
+// Mobile Navigation
+// =============================
+
+const menuBtn = document.querySelector(".menu-btn");
+
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+// =============================
+// Active Navigation Highlight
+// =============================
+
+const sections = document.querySelectorAll("section");
+
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",()=>{
+
+    let current = "";
+
+    sections.forEach(section=>{
+
+        const sectionTop = section.offsetTop-120;
+
+        const sectionHeight = section.clientHeight;
+
+        if(pageYOffset >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+// =============================
+// Scroll Reveal Animation
+// =============================
+
+const revealElements = document.querySelectorAll(".section");
+
+function reveal(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    revealElements.forEach(element=>{
+
+        const top = element.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+// =============================
+// Smooth Close Mobile Menu
+// =============================
+
+navItems.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+// =============================
+// Navbar Shadow on Scroll
+// =============================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 40){
+
+        header.style.boxShadow = "0 6px 20px rgba(0,0,0,0.12)";
+
+    }else{
+
+        header.style.boxShadow = "0 2px 15px rgba(0,0,0,0.08)";
+
+    }
+
+});
+</script>
+
+</body>
+
+</html>
