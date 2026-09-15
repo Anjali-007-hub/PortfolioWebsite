@@ -33,5 +33,5 @@ Interests:
  AI Bootcamp
  Python Programming
  Full Stack Development
-Thank you for visiting my portfolio.
+Thank you for visiting my portfolio website.
 
