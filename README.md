@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 🌐 Personal Portfolio Website
 Welcome to my Personal Portfolio Website! This website showcases my profile, technical skills, certificates, and contact information.
 📌 About
@@ -35,12 +34,4 @@ Interests:
  Python Programming
  Full Stack Development
 Thank you for visiting my portfolio.
-my portfilio
-i am cse student
-git first project.
 
-
- 
-=======
-# PortfolioWebsite
->>>>>>> ba4d2c9e82fc916c7b9911ddbabd093d42d23d0f
