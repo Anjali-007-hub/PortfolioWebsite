@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 🌐 Personal Portfolio Website
 Welcome to my Personal Portfolio Website! This website showcases my profile, technical skills, certificates, and contact information.
 📌 About
